@@ -409,3 +409,83 @@ class Conformidad(models.Model):#listo
         verbose_name = 'Conformidad'
         verbose_name_plural = 'Conformidades'
         ordering = ['id']
+
+###############################################################################################
+class TipoCruceta(models.Model):
+
+    name = models.CharField(max_length=20, verbose_name='Nombre', unique=True)
+    desc = models.CharField(max_length=500, null=True, blank=True, verbose_name='Descripción')
+
+    def __str__(self):
+        return self.name
+
+    def toJSON(self):
+        item = model_to_dict(self)
+        return item
+    
+class TipoAbrazadera(models.Model):
+
+    name = models.CharField(max_length=20, verbose_name='Nombre', unique=True)
+    desc = models.CharField(max_length=500, null=True, blank=True, verbose_name='Descripción')
+
+    def __str__(self):
+        return self.name
+
+    def toJSON(self):
+        item = model_to_dict(self)
+        return item
+
+    
+
+class TipoPoste(models.Model):
+
+    name = models.CharField(max_length=20, verbose_name='Nombre', unique=True)
+    desc = models.CharField(max_length=500, null=True, blank=True, verbose_name='Descripción')
+
+    def __str__(self):
+        return self.name
+
+    def toJSON(self):
+        item = model_to_dict(self)
+        return item
+
+
+class Poste(models.Model):
+    
+   
+    name = models.CharField(max_length=150, verbose_name='Nombre', unique=True)
+    tipo_cruceta = models.ForeignKey(TipoCruceta, on_delete=models.CASCADE, verbose_name='Tipo de cruceta')
+    tipo_abrazadera = models.ForeignKey(TipoAbrazadera, on_delete=models.CASCADE, verbose_name='Tipo de abrazadera')
+    tipo_poste = models.ForeignKey(TipoPoste, on_delete=models.CASCADE, verbose_name='Tipo de poste')
+    latitud = models.FloatField(verbose_name='Latitud', null=True, blank=True)
+    longitud = models.FloatField(verbose_name='Longitud', null=True, blank=True)
+    image = models.ImageField(upload_to='product/%Y/%m/%d', null=True, blank=True, verbose_name='Imagen')
+    obs = models.CharField(max_length=500, null=True, blank=True, verbose_name='Observaciones')
+
+    estado = models.BooleanField(verbose_name='Incorporado', default=True)
+
+
+    def __str__(self):
+        return self.name
+
+    def toJSON(self):
+        item = model_to_dict(self)
+        item['tipo_cruceta'] = self.tipo_cruceta.toJSON()
+        item['tipo_abrazadera'] = self.tipo_abrazadera.toJSON()
+        item['tipo_poste'] = self.tipo_poste.toJSON()
+        item['image'] = self.get_image()
+        
+    
+        return item
+    
+    def get_image(self):
+        if self.image:
+            return '{}{}'.format(MEDIA_URL, self.image)
+        return '{}{}'.format(STATIC_URL, 'img/empty.png')
+
+    class Meta:
+        verbose_name = 'Poste'
+        verbose_name_plural = 'Postes'
+        ordering = ['id']
+
+

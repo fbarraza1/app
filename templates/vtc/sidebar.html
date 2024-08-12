@@ -40,32 +40,20 @@
                         </p>
                     </a>
                 </li>
+              
                 <li class="nav-item">
-                    <a href="{% url 'erp:producto_list' %}" class="nav-link">
+                    <a href="{% url 'erp:poste_list' %}" class="nav-link">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>
-                            Productos
+                            Poste
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{% url 'erp:stock_list' %}" class="nav-link">
-                        <i class="nav-icon fas fa-boxes"></i>
-                        <p>
-                            Inventario
-                        </p>
-                    </a>
-                </li>
+
+             
               
-                <li class="nav-item">
-                    <a href="{% url 'erp:cliente_list' %}" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            Clientes
-                        </p>
-                    </a>
-                </li>
+             
 
                 <li class="nav-item">
                     <a href="{% url 'sale_report' %}" class="nav-link">
@@ -76,90 +64,8 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-building"></i>
-                        <p>
-                            Proveedores
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview" style="display: none;">
-                        <li class="nav-item">
-                            <a href="{% url 'erp:proveedor_list' %}" class="nav-link">
-                                <i class="fas fa-list"></i>
-                                <p>Listado de proveedores</p>
-                            </a>
-                        </li>
-                
-                        <li class="nav-item">
-                            <a href="{% url 'erp:oc_list' %}" class="nav-link">
-                                <i class="fas fa-file-alt"></i>
-                                <p>Ordenes de Compra</p>
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </li>
-              
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-solid fa-dolly"></i>
-                        <p>
-                            Movimientos
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview" style="display: none;">
-                        <li class="nav-item">
-                            <a href="{% url 'erp:sale_list' %}" class="nav-link">
-                                <i class="fas fa-shopping-cart"></i>
-                                <p>Ventas</p>
-                            </a>
-                        </li>
-                
-                        <li class="nav-item">
-                            <a href="{% url 'erp:mov_list' %}" class="nav-link">
-                                <i class="fas fa-user-tie"></i>
-                                <p>Clientes</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'erp:movemp_list' %}" class="nav-link">
-                                <i class="fas fa-user"></i>
-                                <p>Empleados</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
                 <hr>
-            
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      
-                        <i class="fas fa-cubes"></i>
-                        <p>
-                            Gestión de recursos
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview" style="display: none;">
-                        <li class="nav-item">
-                            <a href="{% url 'erp:category_list' %}" class="nav-link">
-                                <i class="fas fa-folder"></i>
-                                <p>Categorías</p>
-                            </a>
-                        </li>
-                
-                        <li class="nav-item">
-                            <a href="{% url 'erp:tipomov_list' %}" class="nav-link">
-                                <i class="fas fa-exchange-alt"></i>
-                                <p>Tipos de Movimientos</p>
-                            </a>
-                        </li>
+                                        
                         <li class="nav-item">
                             <a href="{% url 'erp:tipoprod_list' %}" class="nav-link">
                                 <i class="fas fa-tags"></i>
@@ -167,12 +73,7 @@
                             </a>
                         </li>
                 
-                        <li class="nav-item">
-                            <a href="{% url 'erp:empleado_list' %}" class="nav-link">
-                                <i class="fas fa-users"></i>
-                                <p>Empleados</p>
-                            </a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a href="{% url 'user:user_list' %}" class="nav-link">
                                 <i class="fas fa-user-friends"></i>
@@ -181,9 +82,6 @@
                         </li>
 
                     </u>
-
-            
-
 
         </nav>
     </div>
